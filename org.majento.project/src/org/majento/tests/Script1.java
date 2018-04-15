@@ -41,4 +41,8 @@ public void verifyloginofmajentoinvalid() {
 	}
 	driver.close();
 }
+@Test
+public void m2() {
+	
+}
 }
