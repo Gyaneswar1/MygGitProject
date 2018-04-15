@@ -40,6 +40,5 @@ public void verifyloginofmajentoinvalid() {
 		System.out.println("test script fail");
 	}
 	driver.close();
-	driver.close();
 }
 }
