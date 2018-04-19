@@ -28,9 +28,8 @@ public void verifyloginofmajentoinvalid() {
 	startbrowser("firefox","https://amazon.in");
 	MajentoLogin majentologinref=new MajentoLogin();
 	majentologinref.logintomajento("b.gyaneswar91@gmail.com", "gyana@7682");
-	MajentoElementsLogin majentopageref=PageFactory.initElements(driver, MajentoElementsLogin.class);
 	String excepted="Your password is incorrect";
-	String actual=majentopageref.invalidpswtext.getText();
+	String actual=invalidpasswordtext();
 	assertEquals(excepted,actual );
 	System.out.println("test script is pass"+actual);
 }
