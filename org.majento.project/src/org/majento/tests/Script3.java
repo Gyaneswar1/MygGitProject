@@ -1,5 +1,7 @@
 package org.majento.tests;
 
+import static org.testng.Assert.assertEquals;
+
 import org.majento.basetest.MajentoHome;
 import org.majento.basetest.MajentoLogin;
 import org.majento.basetest.majentoOrder;
@@ -13,8 +15,6 @@ public class Script3 extends Base {
 public void verifyreturnreceived() throws InterruptedException {
      
 	startbrowser("firefox","https://amazon.in");
-	//logintomajento("b.gyaneswar91@gmail.com", "gyana@7682968092");
-	//clickorder();
 	MajentoLogin login=new MajentoLogin();
 	login.logintomajento("b.gyaneswar91@gmail.com", "gyana@7682968092");
 		MajentoHome h=new MajentoHome();
@@ -22,12 +22,8 @@ public void verifyreturnreceived() throws InterruptedException {
 	majentoOrder m=new majentoOrder();
 	m.clickviewreturnrefundstatus();
 	String ActualResult=m.gettextpfreturnreceivedprocessingrefund();
-	String exceptedResult="Return received. Processing your refund";
-	//if(exceptedResult.equals(ActualResult)) {
-		System.out.println("test scrpit is pass"+ActualResult);
-	//}else {
-	//	System.out.println("test scrpit is fail");
-	}
-	
+	String exceptedResult="Return received. Processing your refund.";
+assertEquals(exceptedResult,ActualResult );
+System.out.println("the test script is pass"+ActualResult);
 }
-//}
+}
